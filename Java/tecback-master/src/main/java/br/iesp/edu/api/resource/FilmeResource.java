@@ -5,6 +5,7 @@ import br.iesp.edu.api.service.FilmeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -15,12 +16,12 @@ public class FilmeResource {
     private FilmeService service;
 
     @PostMapping
-    public Filme salvar(@RequestBody  Filme filme){
+    public Filme salvar(@RequestBody @Valid Filme filme){
         return service.salvar(filme);
     }
 
     @PutMapping
-    public Filme atualizar(@RequestBody  Filme filme){
+    public Filme atualizar(@RequestBody @Valid Filme filme){
         return service.atualizar(filme);
     }
 

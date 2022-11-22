@@ -1,11 +1,11 @@
 package br.iesp.edu.api.resource;
 
-import br.iesp.edu.api.entity.Filme;
 import br.iesp.edu.api.entity.FormaPagamento;
 import br.iesp.edu.api.service.FormaPagamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -18,12 +18,12 @@ public class FormaPagamentoResourse {
     private FormaPagamentoService service;
 
     @PostMapping
-    public FormaPagamento salvar(@RequestBody FormaPagamento formaPagamento){
+    public FormaPagamento salvar(@RequestBody @Valid FormaPagamento formaPagamento){
         return service.salvar(formaPagamento);
     }
 
     @PutMapping
-    public FormaPagamento atualizar(@RequestBody  FormaPagamento formaPagamento){
+    public FormaPagamento atualizar(@RequestBody @Valid FormaPagamento formaPagamento){
         return service.atualizar(formaPagamento);
     }
 

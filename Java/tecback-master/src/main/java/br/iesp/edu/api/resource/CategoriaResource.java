@@ -5,6 +5,7 @@ import br.iesp.edu.api.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -15,12 +16,12 @@ public class CategoriaResource {
     private CategoriaService service;
 
     @PostMapping
-    public Categoria salvar(@RequestBody Categoria categoria){
+    public Categoria salvar(@RequestBody @Valid Categoria categoria){
         return service.salvar(categoria);
     }
 
     @PutMapping
-    public Categoria atualizar(@RequestBody  Categoria categoria){
+    public Categoria atualizar(@RequestBody @Valid Categoria categoria){
         return service.atualizar(categoria);
     }
 
@@ -37,7 +38,5 @@ public class CategoriaResource {
     public List<Categoria> listarCategoria(){
         return service.listarCategoria();
     }
-
-
 
 }

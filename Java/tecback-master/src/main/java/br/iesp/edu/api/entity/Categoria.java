@@ -6,6 +6,7 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Getter
@@ -15,5 +16,7 @@ public class Categoria {
     @Id
     @GeneratedValue
     private Integer id;
+
+    @NotEmpty(message="Campo categoria é obrigatório.")
     private String categoria;
 }

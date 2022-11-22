@@ -5,6 +5,7 @@ import br.iesp.edu.api.service.SerieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -15,12 +16,12 @@ public class SerieResource {
     private SerieService service;
 
     @PostMapping
-    public Serie salvar(@RequestBody  Serie serie){
+    public Serie salvar(@RequestBody @Valid Serie serie){
         return service.salvar(serie);
     }
 
     @PutMapping
-    public Serie atualizar(@RequestBody  Serie serie){
+    public Serie atualizar(@RequestBody @Valid Serie serie){
         return service.atualizar(serie);
     }
 

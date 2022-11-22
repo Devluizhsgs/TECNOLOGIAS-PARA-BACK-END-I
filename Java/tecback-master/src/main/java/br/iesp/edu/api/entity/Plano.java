@@ -7,15 +7,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Getter
 @Setter
-public class Sinopse {
+public class Plano {
     @Id
     @GeneratedValue
     private Integer id;
 
-    @NotEmpty(message="Campo sinopse é obrigatório.")
-    private String sinopse;
+    @NotEmpty(message="Campo plano é obrigatório.")
+    private String plano;
+
+    @NotNull(message="Campo valor é obrigatório.")
+    private double valor;
 }

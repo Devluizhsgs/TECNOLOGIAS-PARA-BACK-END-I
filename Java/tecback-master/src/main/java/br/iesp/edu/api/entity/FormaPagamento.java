@@ -3,9 +3,8 @@ package br.iesp.edu.api.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Getter
@@ -15,7 +14,7 @@ public class FormaPagamento {
     @Id
     @GeneratedValue
     private Integer id;
-    private String tipoPlano;
-    private Double valorPlano;
+
+    @NotEmpty(message="Campo forma de pagamento é obrigatório.")
     private String formaPagamento;
 }

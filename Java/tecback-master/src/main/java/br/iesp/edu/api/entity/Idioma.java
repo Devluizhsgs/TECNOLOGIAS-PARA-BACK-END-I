@@ -11,11 +11,11 @@ import javax.validation.constraints.NotEmpty;
 @Entity
 @Getter
 @Setter
-public class Sinopse {
+public class Idioma {
     @Id
     @GeneratedValue
     private Integer id;
 
-    @NotEmpty(message="Campo sinopse é obrigatório.")
-    private String sinopse;
+    @NotEmpty(message="Campo idioma é obrigatório.")
+    private String idioma;
 }

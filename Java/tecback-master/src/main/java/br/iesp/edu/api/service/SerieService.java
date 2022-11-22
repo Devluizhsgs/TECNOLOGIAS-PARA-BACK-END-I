@@ -1,9 +1,7 @@
 package br.iesp.edu.api.service;
 
 import br.iesp.edu.api.entity.Serie;
-import br.iesp.edu.api.entity.Pessoa;
 import br.iesp.edu.api.repository.SerieRepository;
-import br.iesp.edu.api.repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

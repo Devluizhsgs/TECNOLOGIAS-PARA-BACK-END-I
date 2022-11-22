@@ -3,11 +3,9 @@ package br.iesp.edu.api.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.validation.constraints.Max;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 @Entity
 @Getter
@@ -17,9 +15,21 @@ public class Filme {
     @Id
     @GeneratedValue
     private Integer id;
+
+    @NotEmpty(message="Campo titulo é obrigatório.")
     private String titulo;
-    private Integer ano;
+
+    @NotEmpty(message="Campo ano é obrigatório.")
+    private String ano;
+
     @ManyToOne
+    @NotEmpty(message="Campo categoria é obrigatório.")
     private Categoria categoria;
 
+    @OneToMany
+    private List<Idioma> idioma;
+
+    @OneToOne
+    @NotEmpty(message="Campo sinopse é obrigatório.")
+    private Sinopse sinopse;
 }
