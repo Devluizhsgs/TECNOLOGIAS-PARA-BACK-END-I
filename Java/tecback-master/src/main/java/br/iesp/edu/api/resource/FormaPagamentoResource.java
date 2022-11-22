@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/FormaPagamento")
 
-public class FormaPagamentoResourse {
+public class FormaPagamentoResource {
 
 
     @Autowired
