@@ -38,6 +38,4 @@ public class CategoriaResource {
         return service.listarCategoria();
     }
 
-
-
 }

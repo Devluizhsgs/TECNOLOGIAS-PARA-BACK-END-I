@@ -4,11 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.br.CPF;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.List;
 
 @Getter
 @Setter
@@ -24,6 +22,6 @@ public class Pessoa {
     private String email;
     @CPF
     private String cpf;
-    //OneToMany ou ManyToOne
-    private Perfil perfil;
+    @OneToMany
+    private List<Perfil> perfil;
 }

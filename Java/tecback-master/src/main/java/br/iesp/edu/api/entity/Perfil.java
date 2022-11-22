@@ -1,16 +1,24 @@
 package br.iesp.edu.api.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Getter
+@Setter
 public class Perfil {
     @Id
     @GeneratedValue
     private Integer id;
     private String nome;
     private boolean restricaoIdade;
-    //OneToMany ou ManyToOne
-    private Serie seriesFavoritas;
-    //OneToMany ou ManyToOne
-    private Filme filmesFavoritos;
+    @OneToMany
+    @JoinColumn
+    private List<Serie> seriesFavoritas;
+    @OneToMany
+    @JoinColumn()
+    private List<Filme> filmesFavoritos;
 }
