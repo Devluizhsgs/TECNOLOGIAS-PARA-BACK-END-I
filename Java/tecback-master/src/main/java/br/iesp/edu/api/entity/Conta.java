@@ -39,10 +39,11 @@ public class Conta {
     private List<Perfil> perfil;
 
     @OneToOne
-    @NotEmpty(message="Campo forma de pagamento é obrigatório.")
     private FormaPagamento formaPagamento;
 
     @OneToOne
-    @NotEmpty(message="Campo plano é obrigatório.")
     private Plano plano;
+
+    @OneToOne
+    private Cep cep;
 }
