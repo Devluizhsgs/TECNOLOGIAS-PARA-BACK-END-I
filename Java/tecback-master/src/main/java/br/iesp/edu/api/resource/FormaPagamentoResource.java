@@ -9,7 +9,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/FormaPagamento")
+@RequestMapping("/formaPagamento")
 
 public class FormaPagamentoResource {
 
@@ -31,7 +31,7 @@ public class FormaPagamentoResource {
     public void excluir(@RequestBody FormaPagamento formaPagamento){
         service.excluir(formaPagamento);
     }
-    @DeleteMapping("/{id}")  // localhost:8080/formaPagamento/45
+    @DeleteMapping("/{id}")
     public void excluirPorId(@PathVariable Integer id){
         service.excluirPorID(id);
     }

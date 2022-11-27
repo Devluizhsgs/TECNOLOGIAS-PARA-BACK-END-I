@@ -29,7 +29,7 @@ public class SerieResource {
     public void excluir(@RequestBody Serie serie){
         service.excluir(serie);
     }
-    @DeleteMapping("/{id}")  // localhost:8080/serie/45
+    @DeleteMapping("/{id}")
     public void excluirPorId(@PathVariable Integer id){
         service.excluirPorID(id);
     }
